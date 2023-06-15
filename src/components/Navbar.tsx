@@ -1,15 +1,13 @@
+import { Link, NavLink } from 'react-router-dom';
+
 function Navbar(){
     return(
-        <div>
-            <div> Home</div>
-            <div> About</div>
-            <div> Error</div>
-            <div> Profile</div>
-            <ul>
-                <li>Mégane</li>
-                <li>Peepo</li>
-                <li>KC</li>
-            </ul>
+        <div className="navbar">
+            <span><NavLink to="/"> Home </NavLink></span>
+            <span><NavLink to="/todo"> Todo</NavLink></span>
+            <span><NavLink to="/freelance"> Freelance</NavLink></span>
+            <span><NavLink to="/profile/Mégane">Mon Profil</NavLink></span>
+        
         </div>
     )
 }
