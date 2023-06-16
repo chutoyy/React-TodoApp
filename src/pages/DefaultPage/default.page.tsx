@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet"
+import WelcomeUser from "../../components/WelcomeUser"
 
 function DefaultPage(){
     return (
@@ -7,6 +8,10 @@ function DefaultPage(){
                 <title> HomePage</title>  
             </Helmet>
             <h1>Homepage</h1>
+            <WelcomeUser
+                name="Mégane"
+                age={22}
+            />
         </div>
     )
 }

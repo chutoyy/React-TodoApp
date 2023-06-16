@@ -91,6 +91,7 @@ button:focus-visible {
 }
 
 .freelance-box p { margin: 0}
+.freelance-box .post { color: red;}
 .freelance-box .title { color: #747bff;}
 .clr-black {color: #1a1a1a;}
 .clr-grey {color: #a7a7a7;}

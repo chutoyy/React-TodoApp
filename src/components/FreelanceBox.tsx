@@ -1,24 +1,28 @@
+import { Link } from "react-router-dom";
 import UserInterface from "../interfaces/user.interface";
 
-function FreelanceBox(props:{user: UserInterface} ) {
+
+function FreelanceBox({user}:{user: UserInterface} ) {
     return (
         <div className="freelance-box">
-
-            <h2><b>#{props.user.id} -</b>
-            <span className="title"> {props.user.company.bs} </span> </h2>
-            <b>{props.user.name}</b><span className="clr-grey">@{props.user.username}</span>
+            
+            <h2><b>#{user.id} -</b>
+            <span className="title"> {user.company.bs} </span> </h2>
+            <b>{user.name}</b><span className="clr-grey">@{user.username}</span>
             <hr/>
-            <p>Email: {props.user.email}</p>
-            <p>Phone: {props.user.phone}</p>
-            <p>Website: {props.user.website}</p>
-            <p>Address: {props.user.address.street} {props.user.address.suite}, {props.user.address.city} {props.user.address.zipcode}</p>
+            <p>Email: {user.email}</p>
+            <p>Phone: {user.phone}</p>
+            <p>Website: {user.website}</p>
+            <p>Address: {user.address.street} {user.address.suite}, {user.address.city} {user.address.zipcode}</p>
             <hr/>
             <div className="company">
-                <p><b>{props.user.company.name}</b></p>
-                <p>{props.user.company.catchPhrase}</p>
+                <p><b>{user.company.name}</b></p>
+                <p>{user.company.catchPhrase}</p>
             </div>
+            <Link to={`/freelance/${user.id}`}>See posts</Link>
         </div>
     )
+    
 }
 
 export default FreelanceBox

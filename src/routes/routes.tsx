@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage/error.page"
 import Document from "../components/Document"
 import DefaultPage from "../pages/DefaultPage/default.page"
 import FreelancePage from "../pages/FreeLancePage/freelance.page"
+import UsersPostsPage from "../pages/UsersPage/usersPosts.page"
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:"/freelance",
                 element: <FreelancePage/>
+            },
+            {
+                path: "/freelance/:userId",
+                element: <UsersPostsPage/>
             }
         ]
     }

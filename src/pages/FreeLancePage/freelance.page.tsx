@@ -5,29 +5,34 @@ import { useEffect, useState } from "react";
 import UserInterface from "../../interfaces/user.interface";
 
 
-function FreelancePage(){
-    const [users, setUser] = useState<UserInterface[]>([]);
+function FreelancePage() {
+    const [users, setUsers] = useState<UserInterface[]>([]);
+    const [loading, setLoading] = useState(true)
+
+    const loadData = async () => {
+        await axios.get("https://jsonplaceholder.typicode.com/users")
+            .then((response) => setUsers(response.data))
+        setLoading(false)
+    }
     useEffect(() => {
-        axios.get(baseURL).then((response) => {
-            setUser(response.data);
-        });
+        loadData()
     }, []);
-    const baseURL = "https://jsonplaceholder.typicode.com/users";
 
 
     if (!users) return null;
 
 
-    return(
+    if (loading == true) return <h1>Loading...</h1>
+    return (
         <div>
             <Helmet>
-                <title> Freelance</title>  
+                <title> Freelance</title>
             </Helmet>
             <h1>
                 Freelance Page
             </h1>
-            {users.map((user, index)=>{
-                return(
+            {users.map((user, index) => {
+                return (
                     <FreelanceBox
                         key={index}
                         user={user}
