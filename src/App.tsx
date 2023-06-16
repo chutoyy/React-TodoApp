@@ -1,4 +1,3 @@
-import Document from "./components/Document";
 import RouteMap from "./routes/routes";
 
 function App (){
